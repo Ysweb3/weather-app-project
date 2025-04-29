@@ -1,5 +1,8 @@
 import "./styles.css";
 
+const city = document.getElementById("city");
+const submitBtn = document.getElementById("submit-btn");
+
 async function getWeather(value){
     try{
         const response = await fetch("https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/"+value+"/?key=B2TNXK8VZYBRPC8W7DCV9LYCA")
@@ -7,7 +10,7 @@ async function getWeather(value){
         return weatherData;
     }
     catch (error){
-        console.log("Invalid City " )
+        console.log("Invalid City")
     }
 }
 // getWeather("india")
@@ -18,4 +21,16 @@ async function getWeather(value){
 //     console.log(error);
 // });
 
-console.log(getWeather("indi"))
+
+submitBtn.addEventListener("click",() =>{
+    getWeather(city.value)
+    .then(data =>{
+        console.log(data);
+        console.log(data.address);
+    })
+    .catch(error =>{
+        console.log("Invalid City: " +error);
+    });
+
+
+});
