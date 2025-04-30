@@ -7,8 +7,26 @@
     <link rel="icon" type="image/x-icon" href="asset/resource/sun-solid.svg">
 </head>
 <body>
-  <input type="text" id="city">
-  <button type="button" id="submit-btn">Search</button>
-
+    <div id="info-container">
+        <div id="input-div">
+            <input type="text" id="city" placeholder="Enter location, eg: london" style="font-size:25px;">
+            <button type="button" id="submit-btn" ><img src="asset/resource/double-arrow-right-svgrepo-com.svg" alt="" height="50px" width="50px"></button>
+        </div>
+            <div id="data">
+                <div>
+                    <p id="temp">72 F</p>
+                    <p id="humidity">Humidity: 40%</p>
+                    <p id="feelslike">feelslike:80 F</p>
+                    <p id="description"></p>
+                </div>
+                <div id="image-data">
+                    <img src="asset/resource/sun-solid.svg" alt=""height="150px" id="icon-img">
+                    <p id="icon" style="height: 100px;width: 200px;padding: 0px;">Clear sky</p>
+                </div>
+            </div>
+        
+    </div>
+    
+    
 </body>
 </html>

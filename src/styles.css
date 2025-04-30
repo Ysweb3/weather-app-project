@@ -1,3 +1,91 @@
 body{
-    background-color: rgb(230, 190, 31);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+input{
+    height: 50px;
+    width: 700px;
+    border: 2px solid grey;
+    border-radius: 10px;
+    padding: 5px;
+}
+input::selection{
+    background-color: grey;
+}
+button{
+    height: 50px;
+    width: 60px;
+    border-radius: 5px;
+    color: white;
+    margin-left: -60px;
+    border: none;
+    z-index: 1;
+    background-color: transparent;
+    cursor: pointer;
+}
+button:active{
+    transform:scale(0.8) ;
+}
+#input-div{
+    display: flex;
+    margin-top: -1px;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+}
+#current-data{
+    display: flex;
+    height: 200px;
+    align-items: center;
+    justify-content: center;
+    margin-top:100px ;
+
+}
+p{
+    margin: 10px;
+    padding-left: 0px;
+    width: 300px;
+    border-bottom: 3px solid gray ;
+    border-radius: 5px;
+}
+p#icon{
+    text-align: center;
+    border-top: 3px solid gray ;
+    border-bottom: none;
+    margin-top: 15px;
+
+    height: 100px;
+}
+#info-container{
+    border: 2px solid grey;
+    border-radius: 20px;
+    height: 400px;
+    width: 800px;
+    margin-top: 10%;
+
+}
+#data{
+    display: flex;
+    font-size: 35px;
+    font-family: sans-serif;
+    margin-left: 50px;
+    margin-top: 30px;
+    height: 200px;
+    width: 250px;
+    flex-direction: row;
+}
+#image-data{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 150px;
+    margin-top: 10px;
+    width: 300px;
+}
+#description{
+    font-size: 20px;
+    height: 100px;
+    overflow:-moz-hidden-unscrollable;
+    font-weight: 800;
 }
