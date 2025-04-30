@@ -42,7 +42,14 @@ async function getWeather(value){
 // });
 
 
-submitBtn.addEventListener("click",() =>{
+submitBtn.addEventListener("click",fillData);
+document.getElementById("city").addEventListener("keyup", function (event) {
+    if (event.key === "Enter") {
+       fillData();
+    }
+});
+
+function fillData(){
     getWeather(city.value)
     .then(data =>{
         console.log(data);
@@ -56,7 +63,7 @@ submitBtn.addEventListener("click",() =>{
     .catch(error =>{
         console.log("Invalid City: " +error);
     });
-});
+}
 
 function fillIcon(icon){
     console.log(icon);
