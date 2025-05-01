@@ -30,6 +30,7 @@ async function getWeather(value){
     }
     catch (error){
         console.log("Invalid City")
+        description.textContent = "Description:Error fetching details try again"
     }
 };
 
@@ -53,10 +54,10 @@ function fillData(){
     getWeather(city.value)
     .then(data =>{
         console.log(data);
-        temp.textContent = data.currentConditions.temp + " F";
+        temp.textContent = data.currentConditions.temp + "°F";
         icon.textContent = data.currentConditions.conditions;
         humidity.textContent ="Humidity: "+ data.currentConditions.humidity+" %";
-        feelslike.textContent = "Feelslike: "+ data.currentConditions.feelslike+ " F";
+        feelslike.textContent = "Feelslike: "+ data.currentConditions.feelslike+ "°F";
         description.textContent = "Description: "+ data.description;
         fillIcon(data.currentConditions.icon);
     })
@@ -160,3 +161,5 @@ function fillIcon(icon){
             break;
     }
 };
+city.value = "London";
+fillData();

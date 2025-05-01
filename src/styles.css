@@ -2,26 +2,35 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
+    font-family: Roboto;
+    background-image: url(asset/resource/beautiful-shining-stars-night-sky.jpg);
+    background-size: cover;
+    color: white;
 }
 input{
     height: 50px;
     width: 700px;
-    border: 2px solid grey;
-    border-radius: 10px;
+    border: 3px solid black;
+    border-radius: 20px;
     padding: 5px;
+    background-color: transparent;
+    border: none;
+    color: white;
 }
-input::selection{
-    background-color: grey;
+input:focus,input:active{
+    background: none;
+    -webkit-appearance: none;
 }
 button{
-    height: 50px;
-    width: 60px;
-    border-radius: 5px;
-    color: white;
-    margin-left: -60px;
+    height: 60px;
+    width: 85px;
+    border-radius: 20px;
+    color: rgb(201, 109, 52);
+    background-color:#ffffff90;
+    margin-left: -86px;
     border: none;
     z-index: 1;
-    background-color: transparent;
     cursor: pointer;
 }
 button:active{
@@ -33,6 +42,8 @@ button:active{
     align-items: center;
     justify-content: center;
     z-index: 1;
+    background-color: rgba(148, 148, 148, 0.233);
+    border-radius: 20px;
 }
 #current-data{
     display: flex;
@@ -41,6 +52,10 @@ button:active{
     justify-content: center;
     margin-top:100px ;
 
+}
+#data-div{
+    margin-left: 300px;
+    margin-top: 55px;
 }
 p{
     margin: 10px;
@@ -54,21 +69,27 @@ p#icon{
     border-top: 3px solid gray ;
     border-bottom: none;
     margin-top: 15px;
-
     height: 100px;
+    font-size: 40px;
 }
 #info-container{
-    border: 2px solid grey;
     border-radius: 20px;
-    height: 400px;
-    width: 800px;
-    margin-top: 10%;
-
+    width: 100vw;
+    margin-top: 5%;
+    display: flex;
+    justify-content:flex-start;
+    margin-left: 45%;
+}
+#temp{
+    position: absolute;
+    left: 40%;
+    top: 300px;
+    border:none;
+    font-size: 80px;
 }
 #data{
     display: flex;
-    font-size: 35px;
-    font-family: sans-serif;
+    font-size: 25px;
     margin-left: 50px;
     margin-top: 30px;
     height: 200px;
@@ -79,9 +100,8 @@ p#icon{
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-left: 150px;
-    margin-top: 10px;
     width: 300px;
+
 }
 #description{
     font-size: 20px;
@@ -89,3 +109,17 @@ p#icon{
     overflow:-moz-hidden-unscrollable;
     font-weight: 800;
 }
+footer{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: red;
+    color: white;
+    text-align: center;
+    background-color: rgba(99, 91, 91, 0.633);
+    color: white;
+}
+a, a:visited, a:hover, a:active {
+    color: inherit;
+  }
