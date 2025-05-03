@@ -5,7 +5,7 @@ body{
     flex-direction: column;
     font-family: Roboto;
     background-image: url(asset/resource/beautiful-shining-stars-night-sky.jpg);
-    background-size: cover;
+    background-size:auto;
     color: white;
 }
 input{
@@ -20,21 +20,33 @@ input{
 }
 input:focus,input:active{
     background: none;
-    -webkit-appearance: none;
+
 }
 button{
     height: 60px;
     width: 85px;
     border-radius: 20px;
-    color: rgb(201, 109, 52);
+    color: rgb(255, 255, 255);
     background-color:#ffffff90;
     margin-left: -86px;
     border: none;
     z-index: 1;
     cursor: pointer;
+    font-size: 30px;
+    font-weight: 900;
 }
 button:active{
     transform:scale(0.8) ;
+}
+#convert-btn{
+    background-color:#3a3a3ae9;
+    padding: 0px;
+    height: 60px;
+    width: 75px;
+    border-radius: 10px;
+    position: fixed;
+    top: 10px;
+    right:20px ;
 }
 #input-div{
     display: flex;
@@ -78,18 +90,18 @@ p#icon{
     margin-top: 5%;
     display: flex;
     justify-content:flex-start;
-    margin-left: 45%;
+    margin-left: 55%;
 }
 #temp{
-    position: absolute;
-    left: 40%;
-    top: 300px;
+    position: relative;
+    right: 300px;
+    top:100px;
     border:none;
     font-size: 80px;
 }
 #data{
     display: flex;
-    font-size: 25px;
+    font-size: 30px;
     margin-left: 50px;
     margin-top: 30px;
     height: 200px;
@@ -104,7 +116,7 @@ p#icon{
 
 }
 #description{
-    font-size: 20px;
+    font-size: 25px;
     height: 100px;
     overflow:-moz-hidden-unscrollable;
     font-weight: 800;

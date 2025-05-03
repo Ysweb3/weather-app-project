@@ -21,6 +21,10 @@ const humidity = document.getElementById("humidity");
 const feelslike = document.getElementById("feelslike");
 const description = document.getElementById("description");
 const iconImg = document.getElementById("icon-img");
+const convertBtn = document.getElementById("convert-btn");
+
+//True is F and false is C
+let degree = true;
 
 async function getWeather(value){
     try{
@@ -34,38 +38,64 @@ async function getWeather(value){
     }
 };
 
-// getWeather("india")
-// .then(temp =>{
-//     console.log(temp.currentConditions);
-// })
-// .catch(error =>{
-//     console.log(error);
-// });
+convertBtn.addEventListener("click" ,() =>{
+    if (degree == true){
+        degree = false;
+        
+        temp.textContent = changeDegree(placeholderTemp)
+        feelslike.textContent = "Feelslike: "+ changeDegree(placeholderFeelslike)
+        
+        
+    }
+    else{
+        degree = true;
+      
+        temp.textContent = changeDegree(placeholderTemp)
+        feelslike.textContent = "Feelslike: "+ changeDegree(placeholderFeelslike)
+        
+    }
+});
 
+//alternates between F and C
+function changeDegree(temp){
+    if (degree == false){
+       
+        return Math.round((temp - 32)/(9/5)) + "°C";
+        
+    }
+    else{
+        return temp + "°F";
+    }
+}
 
 submitBtn.addEventListener("click",fillData);
+//enables user to use enter to send
 document.getElementById("city").addEventListener("keyup", function (event) {
     if (event.key === "Enter") {
        fillData();
     }
 });
-
+let placeholderTemp;
+let placeholderFeelslike;
 function fillData(){
     getWeather(city.value)
     .then(data =>{
         console.log(data);
-        temp.textContent = data.currentConditions.temp + "°F";
+        temp.textContent = changeDegree(data.currentConditions.temp);
+        placeholderTemp = data.currentConditions.temp;
         icon.textContent = data.currentConditions.conditions;
         humidity.textContent ="Humidity: "+ data.currentConditions.humidity+" %";
-        feelslike.textContent = "Feelslike: "+ data.currentConditions.feelslike+ "°F";
+        feelslike.textContent = "Feelslike: "+ changeDegree(data.currentConditions.feelslike);
+        placeholderFeelslike = data.currentConditions.feelslike;
         description.textContent = "Description: "+ data.description;
         fillIcon(data.currentConditions.icon);
+       
     })
     .catch(error =>{
         console.log("Invalid City: " +error);
     });
 }
-
+//sets scr of weather icon according to the data
 function fillIcon(icon){
     console.log(icon);
     switch (icon) {
