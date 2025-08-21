@@ -77,6 +77,7 @@ document.getElementById("city").addEventListener("keyup", function (event) {
 });
 let placeholderTemp;
 let placeholderFeelslike;
+//fetching of api
 function fillData(){
     getWeather(city.value)
     .then(data =>{
@@ -191,5 +192,5 @@ function fillIcon(icon){
             break;
     }
 };
-city.value = "London";
+city.value = "India";
 fillData();
